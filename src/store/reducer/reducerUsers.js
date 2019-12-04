@@ -36,3 +36,5 @@ const reducer = (state = initialState, action) => {
   } // End switch
   return state
 } // End reducer
+
+export default reducer;

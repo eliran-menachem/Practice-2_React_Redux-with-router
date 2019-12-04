@@ -15,3 +15,4 @@ const reducer = (state=initialState,action)=>{
     }// End of switch
     return state
 }// Ens of reducer
+export default reducer;

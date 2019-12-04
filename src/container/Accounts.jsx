@@ -1,15 +1,15 @@
 import React,{Component}from 'react'
 
-class User extends Component {
+class Accounts extends Component {
   render () {
     return(
         <div>
-
+          Accounts
         </div>
     )
   }
-} // End component User
+} // End component Accounts
 
 
 
-export default User
+export default Accounts
