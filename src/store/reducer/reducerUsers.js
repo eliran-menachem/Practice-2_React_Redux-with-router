@@ -1,4 +1,5 @@
 const initialState = {
+  isLogged: false,
   users: [
     {
       id: 1,
@@ -29,11 +30,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'EXAMPLE':
-      return {
-        ...state
-      }
+    case 'LOGIN':
+
+      return { ...state, isLogged: true }
+
+
   } // End switch
+  console.log(state);
   return state
 } // End reducer
 
