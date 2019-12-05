@@ -1,33 +1,34 @@
 import React, { Component } from 'react'
 import './App.css'
 import { connect } from 'react-redux';
-import Users from './container/Users';
-import Accounts from './container/Accounts';
-import About from './container/About';
-import NavBar from './component/NavBar';
+import Users from './containers/Users';
+import Accounts from './containers/Accounts';
+import About from './containers/About';
+import NavBar from './components/NavBar';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
+  Switch
 } from "react-router-dom";
-import navBar from './component/NavBar';
+import Login from './containers/Login';
+import User from './containers/User';
+
 
 class App extends Component {
   render() {
     return <div className="container">
       <Router>
-        <div>
-          <NavBar />
-        </div>
+        <NavBar />
 
-        <switch>
+        <Switch>
           <Route path='/users' component={Users} />
+          <Route path='/user/:userID' component={User} />
+          <Route path='/login' component={Login} />
           <Route path='/accounts' component={Accounts} />
           <Route path='/about' component={About} />
-        </switch>
+          <Route path='/' component={About} />
+        </Switch>
       </Router>
-
     </div> // End of return
   } // End of render
 } // End of comp App
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    addNewUser: () => dispatch()
+    addNewUser: () => dispatch({ type: 'EXAMPLE' })
   }
 }
 
