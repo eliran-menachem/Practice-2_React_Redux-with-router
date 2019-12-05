@@ -6,8 +6,14 @@ import { loginAction } from '../store/actions/usersActions';
 
 class Login extends Component {
 
+  UNSAFE_componentWillMount() {
+    if (this.props.isLogged) {
+      this.props.history.push('/');
+    }
+  }
   handlerLogin = (email, passward) => {
     this.props.login(email, passward)
+    this.props.history.push('/');
   }// End handlerLogin func
 
   render() {
@@ -23,6 +29,7 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
+    isLogged: state.usr.isLogged,
     users: state.usr.users,
     accounts: state.acc.accounts
   }

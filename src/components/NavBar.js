@@ -9,8 +9,8 @@ const navBar = () => {
             <ul className="nav bg-dark p-3 mb-3">
                 <NavLink className='navbar-brand text-light' to='/'  >Users & Accounts</NavLink>
                 <li className="nav-item text-light">
-                    <NavLink to='/about'   className="nav-link active text-light">
-                        About
+                    <NavLink to='/home'   className="nav-link active text-light">
+                        Home
                     </NavLink>
                 </li>
                 <li className="nav-item">
@@ -28,6 +28,7 @@ const navBar = () => {
                         Login
                     </NavLink>
                 </li>
+              
 
             </ul>
       

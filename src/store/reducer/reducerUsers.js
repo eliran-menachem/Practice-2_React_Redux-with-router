@@ -31,12 +31,13 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-
-      return { ...state, isLogged: true }
-
-
+      return {
+        ...state,
+        isLogged: action.payload
+      
+      }
+     
   } // End switch
-  console.log(state);
   return state
 } // End reducer
 

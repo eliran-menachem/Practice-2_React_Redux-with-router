@@ -3,7 +3,7 @@ import './App.css'
 import { connect } from 'react-redux';
 import Users from './containers/Users';
 import Accounts from './containers/Accounts';
-import About from './containers/About';
+import Home from './containers/Home';
 import NavBar from './components/NavBar';
 import {
   BrowserRouter as Router,
@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Login from './containers/Login';
 import User from './containers/User';
+import PrivateRoute from './containers/PrivateRoute';
 
 
 
@@ -22,12 +23,14 @@ class App extends Component {
         <NavBar />
 
         <Switch>
-          <Route path='/users' component={Users} />
+          
           <Route path='/user/:userID' component={User} />
           <Route path='/login' component={Login} />
-          <Route path='/accounts' component={Accounts} />
-          <Route path='/about' component={About} />
-          <Route path='/' component={About} />
+          
+          <Route path='/about' component={Home} />
+          <PrivateRoute path='/accounts' component={Accounts} />
+          <PrivateRoute path='/users' component={Users} />
+          <Route path='/' component={Home} />
         </Switch>
       </Router>
     </div> // End of return

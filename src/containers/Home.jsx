@@ -2,11 +2,11 @@ import React,{Component}from 'react';
 import { connect } from 'react-redux';
 
 
-class About extends Component {
+class Home extends Component {
   render () {
     return(
         <div>
-          About
+          Home
         </div>
     )
   }
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(About)
+)(Home)

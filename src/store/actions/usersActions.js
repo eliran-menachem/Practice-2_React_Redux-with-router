@@ -16,15 +16,16 @@ export const loginAction = (email, password) => {
         fetch('https://reqres.in/api/login', options).then(function (response) {
             return response.json();
         }).then(function (data) {
-            const isLogged = (typeof data.token !== 'undefined' && data.token !== '');
 
-            console.log(data);
 
-            return dispatch({
-                type: "LOGIN",
-                payload: isLogged
-            })
-
+            const isLogged = (typeof data.token !== 'undefined' || data.token !== '');
+            if(isLogged){
+                return dispatch({
+                    type: "LOGIN",
+                    payload: isLogged
+                })  
+            }
+        
         });
     }
 }
